@@ -6,6 +6,9 @@ from argparse import ArgumentParser
 parser = ArgumentParser(description = 'Classify a sequence as DNA or RNA')
 parser.add_argument("-s", "--seq", type = str, required = True, help = "Input sequence")
 
+parser.add_argument("-m", "--motif", type = str, required = False, help = "Motif")
+
+
 if len(sys.argv) == 1:
     parser.print_help()
     sys.exit(1)
@@ -31,6 +34,4 @@ if args.motif:
         print("FOUND")
     else:
         print("NOT FOUND")
-
-parser.add_argument("-m", "--motif", type = str, required = False, help = "Motif")
 
